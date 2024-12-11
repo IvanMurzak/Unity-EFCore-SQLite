@@ -1,6 +1,10 @@
 {
     "name": "extensions.unity.bundle.entityframeworkcore.sqlite",
     "displayName": "Bundle EntityFrameworkCore + SQLite",
+    "author": {
+        "name": "Ivan Murzak",
+        "url": "https://github.com/IvanMurzak"
+    },
     "version": "0.0.1",
     "unity": "2019.2",
     "description": "Bundle project that includes references on EntityFrameworkCore and SQLite set of packages to provide ready to go solution for Windows, MacOS, Android, iOS platforms.",

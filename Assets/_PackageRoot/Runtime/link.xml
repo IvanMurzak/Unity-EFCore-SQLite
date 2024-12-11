@@ -1,0 +1,26 @@
+<linker>
+  <assembly fullname="Microsoft.EntityFrameworkCore">
+    <type fullname="*" preserve="all" />
+  </assembly>
+
+  <assembly fullname="Microsoft.EntityFrameworkCore.Relational">
+    <type fullname="*" preserve="all" />
+  </assembly>
+
+  <!-- Preserve the System.Data.Common assembly (used by EF Core) -->
+  <assembly fullname="System.Data.Common">
+    <type fullname="*" preserve="all" />
+  </assembly>
+
+  <assembly fullname="System.Runtime">
+    <type fullname="*" preserve="all" />
+  </assembly>
+
+  <assembly fullname="SQLitePCLRaw.provider.sqlite3">
+    <type fullname="*" preserve="all" />
+  </assembly>
+
+  <assembly fullname="SQLitePCLRaw.provider.e_sqlite3">
+    <type fullname="*" preserve="all" />
+  </assembly>
+</linker>

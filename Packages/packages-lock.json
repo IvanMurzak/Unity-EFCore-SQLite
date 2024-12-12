@@ -90,15 +90,6 @@
       "dependencies": {},
       "url": "https://unitynuget-registry.azurewebsites.net"
     },
-    "org.nuget.microsoft.entityframeworkcore.proxies": {
-      "version": "5.0.17",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "org.nuget.castle.core": "5.0.0"
-      },
-      "url": "https://unitynuget-registry.azurewebsites.net"
-    },
     "org.nuget.microsoft.entityframeworkcore.relational": {
       "version": "5.0.17",
       "depth": 0,

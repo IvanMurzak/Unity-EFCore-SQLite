@@ -5,7 +5,6 @@
     "org.nuget.microsoft.entityframeworkcore": "5.0.17",
     "org.nuget.microsoft.entityframeworkcore.abstractions": "5.0.17",
     "org.nuget.microsoft.entityframeworkcore.analyzers": "5.0.17",
-    "org.nuget.microsoft.entityframeworkcore.proxies": "5.0.17",
     "org.nuget.microsoft.entityframeworkcore.relational": "5.0.17",
     "org.nuget.microsoft.entityframeworkcore.sqlite.core": "5.0.17",
     "org.nuget.sqlitepclraw.bundle_e_sqlite3": "2.1.10",

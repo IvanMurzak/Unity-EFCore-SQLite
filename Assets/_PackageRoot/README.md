@@ -1,6 +1,6 @@
 # Unity + EFCore + SQLite = ❤️
 
-![npm](https://img.shields.io/npm/v/extensions.unity.bundle.efcore.sqlite) [![openupm](https://img.shields.io/npm/v/extensions.unity.extensions.unity.bundle.efcore.sqlite?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.extensions.unity.bundle.efcore.sqlite/) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-EFCore-SQLite) [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
+![npm](https://img.shields.io/npm/v/extensions.unity.bundle.efcore.sqlite) [![openupm](https://img.shields.io/npm/v/extensions.unity.bundle.efcore.sqlite?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.bundle.efcore.sqlite/) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-EFCore-SQLite) [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 Ready to go bundle package that includes references on [EntityFrameworkCore](https://github.com/dotnet/efcore) and [SQLitePCLRaw](https://github.com/ericsink/SQLitePCL.raw) packages that just works in this combination for the next platforms:
 
@@ -84,4 +84,4 @@ var level_1 = dbContext.Levels.FirstOrDefault(level => level.id == 1);
 # Helpful information
 
 Read more how to use [EntityFrameworkCore](https://learn.microsoft.com/en-us/ef/ef6/get-started?redirectedfrom=MSDN). My favorite approach is `Code First`.
-Please keep in mind because of Unity's .NET Standard 2.1 restrictions we are only limited to use the old version of EntityFrameworkCore 5.0.17. Newer versions require newer .NET version which Unity doesn't support yet. Anyway the version 5.0.17 is a good one for sure!
+Please keep in mind. Because of Unity's .NET Standard 2.1 restrictions we are only limited to use the old version of EntityFrameworkCore 5.0.17. Newer versions require newer .NET version which Unity doesn't support yet. Anyway the version 5.0.17 is a good one for sure!

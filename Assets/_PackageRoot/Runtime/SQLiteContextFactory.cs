@@ -2,27 +2,44 @@ using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace Microsoft.EntityFrameworkCore
+namespace EFCoreSQLiteBundle
 {
     public abstract class SQLiteContextFactory<T> : IDbContextFactory<T>, IDesignTimeDbContextFactory<T> where T : DbContext
     {
-        protected abstract string FolderPath_runtime { get; }
-        protected abstract string FolderPath_designTime { get; }
-        protected virtual string DatabasePath_designTime => $"Data Source={FolderPath_designTime}/data.db";
-        protected virtual string DatabasePath_runtime => $"Data Source={FolderPath_runtime}/data.db";
+        /// <summary>
+        /// The "design time" is only needed in the case if you would like to use the EF Core tools
+        /// For example, to create a migration or update the database schema.
+        /// If you don't need to use the EF Core tools, you can return null here.
+        ///
+        /// Provide the connection string for design time usage.
+        /// It should be something like "Data Source=database.db"
+        /// </summary>
+        protected abstract string DesignTimeDataSource { get; }
+        protected virtual string DataSource => $"Data Source={_dataSource}";
 
+        private readonly string _dataSource;
+        private readonly string _directoryPath;
+
+        /// <summary>
+        /// Default constructor needed for Design Time.
+        /// Don't use it in runtime.
+        /// </summary>
         public SQLiteContextFactory()
         {
             SQLitePCLRaw.Startup.Setup();
         }
-        public SQLiteContextFactory(string folderPath) : this()
+        public SQLiteContextFactory(string directoryPath, string databaseFilename)
         {
-            EnsureDatabaseFolderExists(folderPath);
+            _directoryPath = directoryPath;
+            _dataSource = Path.Combine(directoryPath, databaseFilename);
+            EnsureDatabaseFolderExists();
+
+            SQLitePCLRaw.Startup.Setup();
         }
-        private void EnsureDatabaseFolderExists(string folderPath)
+        private void EnsureDatabaseFolderExists()
         {
-            if (!Directory.Exists(folderPath))
-                Directory.CreateDirectory(folderPath);
+            if (!Directory.Exists(_directoryPath))
+                Directory.CreateDirectory(_directoryPath);
         }
 
         protected abstract T InternalCreateDbContext(DbContextOptions<T> optionsBuilder);
@@ -30,10 +47,10 @@ namespace Microsoft.EntityFrameworkCore
         // Runtime usage
         public T CreateDbContext()
         {
-            EnsureDatabaseFolderExists(FolderPath_runtime);
+            EnsureDatabaseFolderExists();
 
             var optionsBuilder = new DbContextOptionsBuilder<T>()
-                .UseSqlite(DatabasePath_runtime);
+                .UseSqlite(DataSource);
 
             var dbContext = InternalCreateDbContext(optionsBuilder.Options);
 
@@ -45,10 +62,8 @@ namespace Microsoft.EntityFrameworkCore
         // Only design time usage
         T IDesignTimeDbContextFactory<T>.CreateDbContext(string[] args)
         {
-            EnsureDatabaseFolderExists(FolderPath_designTime);
-
             var optionsBuilder = new DbContextOptionsBuilder<T>()
-                .UseSqlite(DatabasePath_designTime);
+                .UseSqlite(DesignTimeDataSource);
 
             return InternalCreateDbContext(optionsBuilder.Options);
         }

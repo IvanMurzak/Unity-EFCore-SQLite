@@ -1,6 +1,6 @@
 {
-    "name": "extensions.unity.bundle.entityframeworkcore.sqlite",
-    "displayName": "Bundle EntityFrameworkCore + SQLite",
+    "name": "extensions.unity.bundle.efcore.sqlite",
+    "displayName": "EntityFrameworkCore + SQLite bundle",
     "author": {
         "name": "Ivan Murzak",
         "url": "https://github.com/IvanMurzak"
@@ -9,6 +9,7 @@
     "unity": "2019.2",
     "description": "Bundle project that includes references on EntityFrameworkCore and SQLite set of packages to provide ready to go solution for Windows, MacOS, Android, iOS platforms.",
     "dependencies": {
+        "org.nuget.castle.core": "5.1.1",
         "org.nuget.microsoft.entityframeworkcore": "5.0.17",
         "org.nuget.microsoft.entityframeworkcore.abstractions": "5.0.17",
         "org.nuget.microsoft.entityframeworkcore.analyzers": "5.0.17",
@@ -16,7 +17,7 @@
         "org.nuget.microsoft.entityframeworkcore.relational": "5.0.17",
         "org.nuget.microsoft.entityframeworkcore.sqlite.core": "5.0.17",
         "org.nuget.sqlitepclraw.bundle_e_sqlite3": "2.1.10",
-        "org.nuget.sqlitepclraw.bundle_sqlite3": "2.1.10"
+        "org.nuget.sqlitepclraw.provider.sqlite3": "2.1.10"
     },
     "scopedRegistries": [
         {

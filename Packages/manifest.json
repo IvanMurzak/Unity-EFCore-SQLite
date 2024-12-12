@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.unity.ide.visualstudio": "2.0.22",
+    "org.nuget.castle.core": "5.1.1",
     "org.nuget.microsoft.entityframeworkcore": "5.0.17",
     "org.nuget.microsoft.entityframeworkcore.abstractions": "5.0.17",
     "org.nuget.microsoft.entityframeworkcore.analyzers": "5.0.17",
@@ -8,6 +9,7 @@
     "org.nuget.microsoft.entityframeworkcore.relational": "5.0.17",
     "org.nuget.microsoft.entityframeworkcore.sqlite.core": "5.0.17",
     "org.nuget.sqlitepclraw.bundle_e_sqlite3": "2.1.10",
+    "org.nuget.sqlitepclraw.provider.sqlite3": "2.1.10",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.imageconversion": "1.0.0",
     "com.unity.modules.imgui": "1.0.0",

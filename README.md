@@ -4,12 +4,28 @@
 
 Ready to go bundle package that includes references on [EntityFrameworkCore](https://github.com/dotnet/efcore) and [SQLitePCLRaw](https://github.com/ericsink/SQLitePCL.raw) packages that just works in this combination for the next platforms:
 
+Supports AOT an JIT compilation. For AOT it uses nested `link.xml` file to exclude required classes from stripping.
+
+## Supported project settings
+
+### Platform
+
 - ✔️ Windows
 - ✔️ Android
 - ✔️ iOS
--  MacOS (not yet tested)
+- ✔️ MacOS
+- Others not yet tested
 
-Supports AOT an JIT compilation. For AOT it uses `link.xml` file to exclude required classes from stripping.
+### Scripting backend
+
+- ❌ `Mono`
+- ✔️ `IL2CPP`
+
+### API Compatibility
+
+- ❌ `.NET Framework`
+- ✔️ `.NET Standard 2.0`
+- ✔️ `.NET Standard 2.1`
 
 # Usage
 

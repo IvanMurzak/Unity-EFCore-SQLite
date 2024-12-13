@@ -165,6 +165,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.DefaultCompany.UnityEntityFrameworkCoreSQLite
     Standalone: com.DefaultCompany.Unity-EntityFrameworkCore-SQLite
+    iPhone: com.DefaultCompany.Unity-EntityFrameworkCore-SQLite
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -503,6 +504,9 @@ PlayerSettings:
   - serializedVersion: 3
     m_BuildTarget: Android
     m_Formats: 01000000
+  - serializedVersion: 3
+    m_BuildTarget: iOS
+    m_Formats: 03000000
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -786,7 +790,7 @@ PlayerSettings:
   gcIncremental: 1
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform: {}
-  editorAssembliesCompatibilityLevel: 1
+  editorAssembliesCompatibilityLevel: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Unity-EntityFrameworkCore-SQLite

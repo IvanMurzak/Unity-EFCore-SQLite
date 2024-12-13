@@ -18,6 +18,8 @@ namespace SQLitePCLRaw
             SQLitePCL.raw.SetProvider(new SQLitePCL.SQLite3Provider_e_sqlite3());
 #elif UNITY_IOS // --------------------------------- iOS
             SQLitePCL.raw.SetProvider(new SQLitePCL.SQLite3Provider_sqlite3());
+#else
+            SQLitePCL.Batteries_V2.Init();
 #endif
             isInitialized = true;
         }

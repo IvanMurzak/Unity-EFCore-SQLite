@@ -10,21 +10,21 @@ Supports AOT an JIT compilation. For AOT it uses nested `link.xml` file to exclu
 
 ### Platform
 
-✔️ Windows
-✔️ Android
-✔️ iOS
-✔️ MacOS
+- ✔️ Windows
+- ✔️ Android
+- ✔️ iOS
+- ✔️ MacOS
 
 ### Scripting backend
 
-❌ `Mono`
-✔️ `IL2CPP`
+- ❌ `Mono`
+- ✔️ `IL2CPP`
 
 ### API Compatibility
 
-❌ `.NET Framework`
-✔️ `.NET Standard 2.0`
-✔️ `.NET Standard 2.1`
+- ❌ `.NET Framework`
+- ✔️ `.NET Standard 2.0`
+- ✔️ `.NET Standard 2.1`
 
 # Usage
 

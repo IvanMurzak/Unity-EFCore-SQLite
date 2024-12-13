@@ -14,6 +14,7 @@ Supports AOT an JIT compilation. For AOT it uses nested `link.xml` file to exclu
 - ✔️ Android
 - ✔️ iOS
 - ✔️ MacOS
+- Others not yet tested
 
 ### Scripting backend
 

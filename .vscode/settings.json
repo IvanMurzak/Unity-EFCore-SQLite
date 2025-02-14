@@ -58,6 +58,9 @@
     },
     "dotnet.defaultSolution": "Unity-EntityFrameworkCore-SQLite.sln",
     "cSpell.words": [
-        "efcore"
+        "efcore",
+        "entityframeworkcore",
+        "Murzak",
+        "sqlitepclraw"
     ]
 }

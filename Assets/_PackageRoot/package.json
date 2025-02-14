@@ -5,7 +5,7 @@
         "name": "Ivan Murzak",
         "url": "https://github.com/IvanMurzak"
     },
-    "version": "0.0.4",
+    "version": "0.0.5",
     "unity": "2019.2",
     "description": "Bundle project that includes references on EntityFrameworkCore and SQLite set of packages to provide ready to go solution for Windows, MacOS, Android, iOS platforms.",
     "dependencies": {
@@ -23,7 +23,14 @@
             "name": "Unity NuGet",
             "url": "https://unitynuget-registry.azurewebsites.net",
             "scopes": [
-                "org.nuget"
+                "org.nuget.castle.core",
+                "org.nuget.microsoft.entityframeworkcore",
+                "org.nuget.microsoft.entityframeworkcore.abstractions",
+                "org.nuget.microsoft.entityframeworkcore.analyzers",
+                "org.nuget.microsoft.entityframeworkcore.relational",
+                "org.nuget.microsoft.entityframeworkcore.sqlite.core",
+                "org.nuget.sqlitepclraw.bundle_e_sqlite3",
+                "org.nuget.sqlitepclraw.provider.sqlite3"
             ]
         }
     ]

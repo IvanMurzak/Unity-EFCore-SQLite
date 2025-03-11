@@ -6,7 +6,7 @@
         "email": "ivan.d.murzak@gmail.com",
         "url": "https://github.com/IvanMurzak"
     },
-    "version": "0.0.6",
+    "version": "0.0.7",
     "unity": "2019.2",
     "description": "Bundle project that includes references on EntityFrameworkCore and SQLite set of packages to provide ready to go solution for Windows, MacOS, Android, iOS platforms.",
     "keywords": [

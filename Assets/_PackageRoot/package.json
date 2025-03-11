@@ -33,19 +33,10 @@
     },
     "scopedRegistries": [
         {
-            "name": "package.openupm.com",
-            "url": "https://package.openupm.com",
+            "name": "UnityNuGet",
+            "url": "https://unitynuget-registry.openupm.com/",
             "scopes": [
-                "com.cysharp.unitask",
-                "com.openupm",
-                "org.nuget.castle.core",
-                "org.nuget.microsoft.entityframeworkcore",
-                "org.nuget.microsoft.entityframeworkcore.abstractions",
-                "org.nuget.microsoft.entityframeworkcore.analyzers",
-                "org.nuget.microsoft.entityframeworkcore.relational",
-                "org.nuget.microsoft.entityframeworkcore.sqlite.core",
-                "org.nuget.sqlitepclraw.bundle_e_sqlite3",
-                "org.nuget.sqlitepclraw.provider.sqlite3"
+                "org.nuget"
             ]
         }
     ]

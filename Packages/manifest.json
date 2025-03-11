@@ -18,8 +18,8 @@
   },
   "scopedRegistries": [
     {
-      "name": "Unity NuGet",
-      "url": "https://unitynuget-registry.azurewebsites.net",
+      "name": "UnityNuGet",
+      "url": "https://unitynuget-registry.openupm.com/",
       "scopes": [
         "org.nuget"
       ]

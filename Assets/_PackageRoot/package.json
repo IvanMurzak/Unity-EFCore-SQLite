@@ -3,11 +3,24 @@
     "displayName": "EntityFrameworkCore + SQLite bundle",
     "author": {
         "name": "Ivan Murzak",
+        "email": "ivan.d.murzak@gmail.com",
         "url": "https://github.com/IvanMurzak"
     },
-    "version": "0.0.5",
+    "version": "0.0.6",
     "unity": "2019.2",
     "description": "Bundle project that includes references on EntityFrameworkCore and SQLite set of packages to provide ready to go solution for Windows, MacOS, Android, iOS platforms.",
+    "keywords": [
+        "entityframework",
+        "entityframeworkcore",
+        "efcore",
+        "sqlite",
+        "database",
+        "storage"
+    ],
+    "homepage": "https://github.com/IvanMurzak/Unity-EFCore-SQLite",
+    "bugs": {
+        "url": "https://github.com/IvanMurzak/Unity-EFCore-SQLite/issues"
+    },
     "dependencies": {
         "org.nuget.castle.core": "5.1.1",
         "org.nuget.microsoft.entityframeworkcore": "5.0.17",
@@ -20,17 +33,10 @@
     },
     "scopedRegistries": [
         {
-            "name": "Unity NuGet",
-            "url": "https://unitynuget-registry.azurewebsites.net",
+            "name": "UnityNuGet",
+            "url": "https://unitynuget-registry.openupm.com/",
             "scopes": [
-                "org.nuget.castle.core",
-                "org.nuget.microsoft.entityframeworkcore",
-                "org.nuget.microsoft.entityframeworkcore.abstractions",
-                "org.nuget.microsoft.entityframeworkcore.analyzers",
-                "org.nuget.microsoft.entityframeworkcore.relational",
-                "org.nuget.microsoft.entityframeworkcore.sqlite.core",
-                "org.nuget.sqlitepclraw.bundle_e_sqlite3",
-                "org.nuget.sqlitepclraw.provider.sqlite3"
+                "org.nuget"
             ]
         }
     ]

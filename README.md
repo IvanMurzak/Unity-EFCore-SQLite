@@ -35,6 +35,8 @@ Call the function once at app startup. Important to do that before opening SQLit
 SQLitePCLRaw.Startup.Setup();
 ```
 
+Then use EFCore as usual.
+
 # Installation
 
 - [Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
@@ -43,39 +45,6 @@ SQLitePCLRaw.Startup.Setup();
 
 ``` CLI
 openupm add extensions.unity.bundle.efcore.sqlite
-```
-
-## Manual Installation (alternative)
-
-Modify `/Packages/manifest.json` file by adding requierd `depedencies` and `scopedRegistries`
-```
-{
-  "dependencies": {
-    "extensions.unity.bundle.efcore.sqlite": "0.0.4",
-    "org.nuget.castle.core": "5.1.1",
-    "org.nuget.sqlitepclraw.bundle_e_sqlite3": "2.1.10",
-    "org.nuget.sqlitepclraw.provider.e_sqlite3": "2.1.10",
-    "org.nuget.sqlitepclraw.provider.sqlite3": "2.1.10",
-    "org.nuget.sqlitepclraw.lib.e_sqlite3": "2.1.10"
-  },
-  "scopedRegistries": [
-    {
-      "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.openupm",
-        "extensions.unity.bundle.efcore.sqlite"
-      ]
-    },
-    {
-      "name": "unitynuget-registry.azurewebsites.net",
-      "url": "https://unitynuget-registry.azurewebsites.net",
-      "scopes": [
-        "org.nuget"
-      ]
-    }
-  ]
-}
 ```
 
 # Alternative usage

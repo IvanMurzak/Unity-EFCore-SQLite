@@ -1,3 +1,24 @@
 {
-	"name": "EFCore.SQLite.Bundle"
+    "name": "EFCore.SQLite.Bundle",
+    "rootNamespace": "EFCoreSQLiteBundle",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Castle.Core.dll",
+        "Microsoft.EntityFrameworkCore.dll",
+        "Microsoft.EntityFrameworkCore.Abstractions.dll",
+        "Microsoft.EntityFrameworkCore.Relational.dll",
+        "Microsoft.EntityFrameworkCore.Sqlite.dll",
+        "SQLitePCLRaw.batteries_v2.dll",
+        "SQLitePCLRaw.core.dll",
+        "SQLitePCLRaw.provider.e_sqlite3.dll",
+        "SQLitePCLRaw.provider.sqlite3.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

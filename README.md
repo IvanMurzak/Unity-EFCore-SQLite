@@ -44,34 +44,7 @@ Then use EFCore as usual.
 - Run the command
 
 ``` CLI
-openupm add org.nuget.castle.core@5.1.1 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.microsoft.entityframeworkcore@5.0.17 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.microsoft.entityframeworkcore.abstractions@5.0.17 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.microsoft.entityframeworkcore.analyzers@5.0.17 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.microsoft.entityframeworkcore.relational@5.0.17 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.microsoft.entityframeworkcore.sqlite.core@5.0.17 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.sqlitepclraw.bundle_e_sqlite3@2.1.10 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.sqlitepclraw.provider.sqlite3@2.1.10 --registry https://unitynuget-registry.openupm.com/
-
-```
-
-- Modify `/Packages/manifest.json` file by adding required `dependencies` and `scopedRegistries`
-
-```json
-{
-  "dependencies": {
-    "extensions.unity.bundle.efcore.sqlite": "0.0.9"
-  },
-  "scopedRegistries": [
-    {
-      "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.openupm"
-      ]
-    }
-  ]
-}
+openupm add extensions.unity.bundle.efcore.sqlite
 ```
 
 # Alternative usage

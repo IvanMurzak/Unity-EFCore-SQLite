@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Sample/2. DatabaseOperations/DatabaseOperations.unity
+    guid: 1f0c17a817500ed4ba41dc8fe82c9c30
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

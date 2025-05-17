@@ -27,14 +27,6 @@ Supports AOT an JIT compilation. For AOT it uses nested `link.xml` file to exclu
 - ✔️ `.NET Standard 2.0`
 - ✔️ `.NET Standard 2.1`
 
-# Usage
-
-Call the function once at app startup. Important to do that before opening SQLite connection.
-
-```C#
-SQLitePCLRaw.Startup.Setup();
-```
-
 Then use EFCore as usual.
 
 # Installation
@@ -44,38 +36,35 @@ Then use EFCore as usual.
 - Run the command
 
 ``` CLI
-openupm add org.nuget.castle.core@5.1.1 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.sqlitepclraw.bundle_e_sqlite3@2.1.10 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.sqlitepclraw.provider.e_sqlite3@2.1.10 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.sqlitepclraw.provider.sqlite3@2.1.10 --registry https://unitynuget-registry.openupm.com/
-openupm add org.nuget.sqlitepclraw.lib.e_sqlite3@2.1.10 --registry https://unitynuget-registry.openupm.com/
-
+openupm add extensions.unity.bundle.efcore.sqlite
 ```
 
-- Modify `/Packages/manifest.json` file by adding required `dependencies` and `scopedRegistries`
+# Usage
 
-```json
+## Option 1: Explicit (Recommended)
+
+Use this approach to setup your database and establish connection.
+
+### 1. Create data model `LevelData.cs`
+
+```csharp
+using System.ComponentModel.DataAnnotations;
+
+public class LevelData
 {
-  "dependencies": {
-    "extensions.unity.bundle.efcore.sqlite": "0.0.7"
-  },
-  "scopedRegistries": [
-    {
-      "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.openupm"
-      ]
-    }
-  ]
+    [Key]
+    public int Id { get; set; }
+    [StringLength(100)]
+    public string Name { get; set; }
+    [Range(1, 10)]
+    public int Difficulty { get; set; }
+    public string Description { get; set; }
 }
 ```
 
-# Alternative usage
+### 2. Create `SQLiteContext.cs`
 
-## 1. Create `SQLiteContext` class
-
-```C#
+```csharp
 using Microsoft.EntityFrameworkCore;
 
 public class SQLiteContext : DbContext
@@ -90,38 +79,106 @@ public class SQLiteContext : DbContext
     {
         base.OnModelCreating(builder);
         builder.Entity<LevelData>();
+
+        // To define relationships between tables, configure navigation properties and use Fluent API.
+        // Refer to the official EF Core documentation: https://learn.microsoft.com/en-us/ef/core/modeling/relationships
+        // To generate code automatically, use the EF Core CLI tools. For example:
+        //   dotnet ef migrations add <MigrationName>
+        //   dotnet ef database update
     }
 }
 ```
 
-## 2. Create `SQLiteContextFactory` class
+### 3. Create `SQLiteContextFactory.cs`
 
-```C#
+```csharp
 using Microsoft.EntityFrameworkCore;
 
 public class SQLiteContextFactory : EFCoreSQLiteBundle.SQLiteContextFactory<SQLiteContext>
 {
-    protected override string DesignTimeDataSource => "replace it with path to design time database";
-
-    public SQLiteContextFactory() : base(UnityEngine.Application.persistentDataPath, "data.db") { }
+    public SQLiteContextFactory() : base(UnityEngine.Application.persistentDataPath, "data.db")
+    {
+        // Optional logging
+        UnityEngine.Debug.Log($"Using database: {DataSource}");
+    }
 
     protected override SQLiteContext InternalCreateDbContext(DbContextOptions<SQLiteContext> optionsBuilder)
-        => new SQLiteContext(optionsBuilder);
+    {
+        return new SQLiteContext(optionsBuilder);
+    }
 }
 ```
 
 The `EFCoreSQLiteBundle.SQLiteContextFactory` class under the hood executes `SQLitePCLRaw.Startup.Setup();` for proper SQLite setup depends on the current platform.
 
-## 3. Create database context
+### 4. Create database context
 
-```C#
-var contextFactory = new SQLiteContextFactory();
-var dbContext = contextFactory.CreateDbContext();
-
-// use it for data manipulations
-// sample:
-var level_1 = dbContext.Levels.FirstOrDefault(level => level.id == 1);
+```csharp
+using (var dbContext = new SQLiteContextFactory().CreateDbContext())
+{
+    // use it for data manipulations
+    // sample:
+    var level_1 = dbContext.Levels.FirstOrDefault(level => level.Id == 1);
+}
 ```
+
+There is full usage sample in this source code:
+
+```csharp
+using System.Linq;
+using UnityEngine;
+
+public class DatabaseOperations : MonoBehaviour
+{
+    void Awake()
+    {
+        AddLevel("Level 1", 1, "Easy level");
+        AddLevel("Level 2", 2, "Medium level");
+        AddLevel("Level 3", 3, "Hard level");
+
+        PrintAllLevels();
+    }
+
+    void AddLevel(string name, int difficulty, string description)
+    {
+        using (var dbContext = new SQLiteContextFactory().CreateDbContext())
+        {
+            var level = new LevelData
+            {
+                Name = name,
+                Difficulty = difficulty,
+                Description = description
+            };
+            dbContext.Levels.Add(level);
+            dbContext.SaveChanges();
+        }
+        Debug.Log($"Added Level: {name}, Difficulty: {difficulty}");
+    }
+    void PrintAllLevels()
+    {
+        using (var dbContext = new SQLiteContextFactory().CreateDbContext())
+        {
+            var levels = dbContext.Levels.ToList();
+            foreach (var level in levels)
+                Debug.Log($"Level ID: {level.Id}, Name: {level.Name}, Difficulty: {level.Difficulty}");
+        }
+    }
+}
+```
+
+---
+
+## Option 2: Minimalistic
+
+Use this option if you well understand how to operate with EFCore on your own.
+
+Call the function once at app startup. Important to do that before opening SQLite connection. This method call prepares SQLite.
+
+```csharp
+SQLitePCLRaw.Startup.Setup();
+```
+
+---
 
 # Helpful information
 

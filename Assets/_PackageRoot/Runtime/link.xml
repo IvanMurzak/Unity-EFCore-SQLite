@@ -3,6 +3,10 @@
     <type fullname="*" preserve="all" />
   </assembly>
 
+  <assembly fullname="Microsoft.EntityFrameworkCore.Sqlite">
+    <type fullname="*" preserve="all" />
+  </assembly>
+
   <assembly fullname="Microsoft.EntityFrameworkCore.Relational">
     <type fullname="*" preserve="all" />
   </assembly>

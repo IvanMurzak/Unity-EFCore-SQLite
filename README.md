@@ -80,8 +80,11 @@ public class SQLiteContext : DbContext
         base.OnModelCreating(builder);
         builder.Entity<LevelData>();
 
-        // To create connection between tables read more about Code First EFCore approach
-        // Highly recommended to use command line to generate the code automatically.
+        // To define relationships between tables, configure navigation properties and use Fluent API.
+        // Refer to the official EF Core documentation: https://learn.microsoft.com/en-us/ef/core/modeling/relationships
+        // To generate code automatically, use the EF Core CLI tools. For example:
+        //   dotnet ef migrations add <MigrationName>
+        //   dotnet ef database update
     }
 }
 ```

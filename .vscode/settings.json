@@ -56,7 +56,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Unity-EntityFrameworkCore-SQLite.sln",
+    "dotnet.defaultSolution": "Unity-EFCore-SQLite.sln",
     "cSpell.words": [
         "efcore",
         "entityframework",

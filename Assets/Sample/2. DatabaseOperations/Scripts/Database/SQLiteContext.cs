@@ -11,5 +11,8 @@ public class SQLiteContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<LevelData>();
+
+        // To create connection between tables read more about Code First EFCore approach
+        // Highly recommended to use command line to generate the code automatically.
     }
 }

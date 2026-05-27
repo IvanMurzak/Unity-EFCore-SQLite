@@ -1,0 +1,26 @@
+Unity-Package/Assets/root/Tests/Editor/extensions.unity.bundle.efcore.sqlite.Editor.Tests.asmdef
+  s_5d880819cb1fc0::t_3d996e91d54f7e 6
+Unity-Package/Assets/root/Editor/Scripts/extensions.unity.bundle.efcore.sqlite.Editor.asmdef
+  s_5d880819cb1fc0::t_8050251d69fcb5 4
+Unity-Package/Assets/root/Tests/Runtime/extensions.unity.bundle.efcore.sqlite.Tests.asmdef
+  s_5d880819cb1fc0::t_262eece1f1106f 5
+Unity-Package/Packages/manifest.json
+  s_5d880819cb1fc0::t_06a8cefa5c4141 33
+  s_5d880819cb1fc0::t_13f2d00a602132 1-32,34-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "b64cbf13676a31150a83f327d63ecc1afd7ca2f3",
+  "prompts": {},
+  "sessions": {
+    "s_5d880819cb1fc0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0bda062b-b787-49fc-8c25-2221ccb4e592",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

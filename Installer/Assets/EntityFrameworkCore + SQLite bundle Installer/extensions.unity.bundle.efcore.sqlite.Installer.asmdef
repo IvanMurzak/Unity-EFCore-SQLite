@@ -1,0 +1,16 @@
+{
+    "name": "extensions.unity.bundle.efcore.sqlite.Installer",
+    "rootNamespace": "extensions.unity.bundle.efcore.sqlite.Installer",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

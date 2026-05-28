@@ -16,7 +16,7 @@ namespace extensions.unity.bundle.efcore.sqlite.Installer
     public static partial class Installer
     {
         public const string PackageId = "extensions.unity.bundle.efcore.sqlite";
-        public const string Version = "0.1.2";
+        public const string Version = "0.1.3";
 
         static Installer()
         {
